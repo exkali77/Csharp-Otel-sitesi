@@ -1,0 +1,54 @@
+﻿body {
+}
+
+.form{
+    margin-top:200px;
+   margin-bottom:200px;
+   margin-left:40%;
+   height:500px;
+   width:400px;
+
+
+}
+.btn{
+    margin-top:50px;
+    width:130px;
+    height:50px;
+    margin-left:130px;
+    cursor:pointer;
+    border-radius:20px;
+    outline:none;
+    font-family:Arial;
+    font-size:25px;
+}
+.txtname{
+    margin-top:10px;
+    margin-left:70px;
+
+}
+.txtpass{
+ margin-left:70px;
+ margin-top:10px;
+}
+.lblname{
+margin-top:50px;
+margin-left:70px;
+display:inline-block;
+font-family:Arial;
+}
+.lblpass{
+    margin-top:50px;
+    margin-left:70px;
+    display:inline-block;
+    font-family:Arial;
+}
+.txtname ,.txtpass{
+    border:none;
+    border-bottom:3px solid #000000;
+    outline:none;
+    width:250px;
+    height:40px;
+    font-size:16px;
+    background-color:transparent;
+    font-family:Arial;
+}

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Otel_SitesiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tabel_Hotel">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Explanation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="score" Type="int" Nullable="false" />
+    <Property Name="HotelName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="HotelLocation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HotelSeller" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TabelUser">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pssword" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Otel_Sitesi.dbo.Table_Comments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Table_Comments">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Comment" />
+      <PropertyRef Name="HotelName" />
+      <PropertyRef Name="Score" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HotelName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Score" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Otel_SitesiModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tabel_Hotel" EntityType="Self.Tabel_Hotel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabelUser" EntityType="Self.TabelUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Comments" EntityType="Self.Table_Comments" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Table_Comments].[UserName] AS [UserName], 
+    [Table_Comments].[Comment] AS [Comment], 
+    [Table_Comments].[HotelName] AS [HotelName], 
+    [Table_Comments].[Score] AS [Score]
+    FROM [dbo].[Table_Comments] AS [Table_Comments]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

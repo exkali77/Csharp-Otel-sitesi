@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "hoteladd";
+    Layout = "~/Views/shedar/Leyout.cshtml";
+}
+<link href="~/Css/HotelAdd.css" rel="stylesheet" />
+
+
+
+<div class="frm">
+    <div class="form">
+        @using (Html.BeginForm("hoteladd","hoteladd",FormMethod.Post))
+        {
+            <asp:Label runat="server" class="lblname" Text="Label">İsim</asp:Label>
+            <input type="text" name="UserName" class="txtname" />
+            <asp:Label runat="server" class="lblmessg" Text="Label">Açıklama</asp:Label>
+            <input type="text" name="Explanation" class="txtmessg" />
+            <asp:Label runat="server" class="lblHname" Text="Label">Otel İsmi</asp:Label>
+            <input type="text" name="HotelName" class="txtHname" />
+            <asp:Label runat="server" class="lblseller" Text="Label">İletişim</asp:Label>
+            <input type="text" name="HotelSeller" class="txtseller" />
+            <asp:Label runat="server" class="lbllocal" Text="Label">Otel Konmu</asp:Label>
+            <input type="text" name="HotelLocation" class="txtlocation" />
+            <asp:Label runat="server" class="lblimg" Text="Label">Otel Resmi</asp:Label>
+            <input type="text" name="Photo" class="txtimg" />
+            <Button type="submit" class="sbmit">Ekle</Button>
+            <samp  style="color:red; margin-left:75px; display:inline-block; margin-top:5px;">@ViewBag.txt</samp>
+        }
+    </div>
+</div>
+
+
+

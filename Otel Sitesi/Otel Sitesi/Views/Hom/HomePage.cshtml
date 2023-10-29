@@ -1,0 +1,28 @@
+﻿@model  IEnumerable<Otel_Sitesi.Models.Tabel_Hotel>
+
+@{
+    ViewBag.Title = "HomePage";
+    Layout = "~/Views/shedar/Leyout.cshtml";
+}
+
+@using (Html.BeginForm("Home", "Home", FormMethod.Post))
+{
+    <link href="~/Css/Leyout.css" rel="stylesheet" />
+    foreach (var user in Model)
+    {
+        <asp:DataList class="hotel" DataSourceID="DataSource1" runat="server">
+            <img src="@user.Photo" style="width:500px; height:300px; margin-left:10%;margin-top:3%; float:left;" class="txtphoto" alt="" />
+            <input id="Text1" class="txtname" type="text" value="@user.UserName" readonly="" />
+            <input id="Text2" class="txtevaluation" type="text" value="@user.HotelName" readonly="" />
+            <input id="Text3" class="txtexplan" type="text" value="@user.Explanation" readonly="" />
+            <input id="Text4" class="txtseller" type="text" value="@user.HotelSeller" readonly="" />
+            <input id="Text5" class="txtloction" type="text" value="@user.HotelLocation" readonly="" />
+        </asp:DataList>
+    }
+
+}
+
+
+
+
+

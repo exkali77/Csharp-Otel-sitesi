@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" ; />
+    <meta name="viewport" content="width=device-width" />
+    <title>Tatil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Css/Home.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div>
+        <div class="Contenar">
+            <div class="navbar">
+                <div class="Logo">
+                    <a href="#">Logo</a>
+                </div>
+                <ul>
+                    <li>@Html.ActionLink("Ev", "HomePage", "Hom")</li>
+                    <li>@Html.ActionLink("Otel Ekle", "hoteladd", "Hoteladd")</li>
+                    <li>@Html.ActionLink("Hakımızda", "about", "About")</li>
+                    <li>@Html.ActionLink("Kayıt Ol", "regist", "Regist")</li>
+                    <li>@Html.ActionLink("Giriş Yap", "login", "Login")</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        @RenderBody()
+
+        <div class="footer">
+            <div class="footer-menu">
+                <div class="temlpate">
+                    <a href="#">Logo</a>
+                </div>
+                <ul>
+
+                    <li>@Html.ActionLink("Ev", "HomePage", "Hom")</li>
+                    <li>@Html.ActionLink("Otel Ekle", "hoteladd", "Hoteladd")</li>
+                    <li>@Html.ActionLink("Hakımızda", "about", "About")</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

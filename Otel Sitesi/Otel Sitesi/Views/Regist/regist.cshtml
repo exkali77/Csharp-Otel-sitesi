@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "regist";
+    Layout = "~/Views/shedar/Leyout.cshtml";
+}
+
+<link href="~/Css/regist.css" rel="stylesheet" />
+
+@using (Html.BeginForm("regist","Regist",FormMethod.Post))
+{
+<div class="form">
+
+    <asp:Label runat="server" class="lblname" Text="Label">Kulanıcı Adı</asp:Label>
+    <br />
+    <input type="text" name="Username" class="txtname" />
+    <br />
+    <asp:Label runat="server" class="lblpass" Text="Label">Şifre</asp:Label>
+    <br />
+    <input type="password" name="pssword" class="txtpass" />
+    <br /> 
+    <samp style="color:red; margin-left:75px; margin-top:5px; display:inline-block;">@ViewBag.txt</samp>
+    <br />
+    <input id="Button1" type="submit" class="btn" value="Kayıt ol" />
+
+</div>
+
+}
